@@ -18,6 +18,9 @@ jobs:
       run: dotnet build --configuration Release
     - name: SonarQube Quality Gate Check
       uses: SonarSource/sonarqube-quality-gate-action@v1.0.0
+      env:
+        SONAR_TOKEN: 039c43988dcb9e1143816b374bfd0ce30831b061
+        SONAR_HOST_URL: http://localhost:9000
     - name: Run Tests
       working-directory: ./src
       run: dotnet test
