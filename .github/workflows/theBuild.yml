@@ -16,6 +16,8 @@ jobs:
     - name: Build with dotnet
       working-directory: ./src
       run: dotnet build --configuration Release
+    - name: SonarQube Quality Gate Check
+      uses: SonarSource/sonarqube-quality-gate-action@v1.0.0
     - name: Run Tests
       working-directory: ./src
       run: dotnet test
